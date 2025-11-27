@@ -1671,7 +1671,7 @@
           }
         ],
         "version": "2.5.0",
-        "title": "Architekturdiagramm",
+        "title": "Architekturdiagramm - Original",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "id": 0,
         "diagramType": "STRIDE"
