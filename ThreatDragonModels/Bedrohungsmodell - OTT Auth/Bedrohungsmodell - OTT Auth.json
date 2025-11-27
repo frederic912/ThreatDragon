@@ -1814,8 +1814,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -1916,7 +1916,7 @@
                 {
                   "id": "c3ac57c5-9e68-47ce-a1e5-69a6b69899fe",
                   "title": "SQL Injection bei Registrierung",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Tampering",
                   "description": "ID: CAPEC-66\nTactic: Initial Acces (T1190)\nAngriffsvektor: Network\nBeschreibung: Angreifer nutzt Inputfelder aus, um SQL Anfragen an die Datenbank zustellen und die Daten zu manipulieren\n\nD10, R7, E10, A10\nSumme: 37",
@@ -1929,7 +1929,7 @@
                 {
                   "id": "310456e3-4242-4855-a6de-baed3b40c04c",
                   "title": "Flooding",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "ID: CAPEC-125\nTactic: Inhibit Response Function (T0814)\nAngriffsvektor: Network\nBeschreibung: Angreifer überlastet das Loginsystem durch viele Loginanfragen\n\nD10, R7, E5, A10\nSumme 32",
@@ -1940,14 +1940,14 @@
                   "score": "28"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isWebApplication": null,
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 5,
+                "tampering": 6,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 3,
+                "denialOfService": 4,
                 "elevationOfPrivilege": 0
               }
             }
@@ -2185,7 +2185,9 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
-              "hasOpenThreats": false
+              "hasOpenThreats": false,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null
             }
           },
           {
@@ -2300,28 +2302,22 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [
-                {
-                  "id": "31607411-287a-47ff-b617-eba251187f8c",
-                  "title": "Spoofing von Kundendaten",
-                  "status": "Mitigated",
-                  "severity": "Low",
-                  "type": "Spoofing",
-                  "description": "Angreifer kann sich als \"legitimer\" Kunde ausgeben, um an kritische Daten / Dienste zu gelangen zu denen er eigentlich keinen Zugriff haben dürfte (Social Engineering beim Kundendienst).\n\nCAPEC ID: 148: Content Spoofing: An adversary modifies content to make it contain something other than what the original content producer intended while keeping the apparent source of the content unchanged.\nAtt&ck: T1557 (Adversary-in-the-Middle)\n\nD: 9 / R: 8 / E: 5 / A: 4 / DREA: 26",
-                  "mitigation": "Personal schulen, Kritische Kundendaten als solche für Mitarbeiter in der Support-Software markieren, um Irrtümer zu vermeiden. \n\nDefend Matrix: D3-NTCD: Network Traffic Community Deviation\nASVS: 1.8.1 : Verify that all sensitive data is identified and classified into protection levels.\n\nD: 4 / R: 4 / E: 2 / A: 4 / Neuer DREA: 14",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 102,
-                  "score": "14"
-                }
-              ],
+              "threats": [],
               "hasOpenThreats": false,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
               "handlesCardPayment": null,
-              "handlesGoodsOrServices": null
+              "handlesGoodsOrServices": null,
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -2432,7 +2428,7 @@
             "data": {
               "name": "Telefon-Routing-\nInterface",
               "description": "",
-              "type": "tm.Flow",
+              "type": "tm.Process",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -2560,8 +2556,7 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
                 "targetMarker": {
                   "name": "block"
                 },
@@ -2582,7 +2577,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
@@ -2591,7 +2586,7 @@
                 {
                   "id": "111142fd-56fc-493a-a8d0-17489d494105",
                   "title": "Man in the Middle ",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Information disclosure",
                   "description": "ID: CAPEC-94\nTactic: Credential Access (T1557)\nAngriffsvektor: Local\nBeschreibung: Angreifer fängt die übertragenen Telefonnummern der Nutzer ab\n\nD8, R6, E4, A6\nSumme: 24",
@@ -2604,7 +2599,7 @@
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "informationDisclosure": 4,
+                "informationDisclosure": 5,
                 "denialOfService": 0
               }
             },
@@ -2633,6 +2628,14 @@
               {
                 "x": 810,
                 "y": 190
+              },
+              {
+                "x": 830,
+                "y": 190
+              },
+              {
+                "x": 860,
+                "y": 220
               }
             ]
           },
@@ -3554,13 +3557,11 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3660,12 +3661,12 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "d2bb202d-fa2a-4358-b8d4-02511588968d",
                   "title": "Log-Daten fluten",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Repudiation",
                   "description": "ID: CAPEC-130\nTactic: Defense Evasion (T1562)\nAngriffsvektor: Network\nBeschreibung: Angreifer flutet die Log-Daten, um einen Angriff zu vertuschen\n\nD4, R8, E5, A0\nSumme 17",
@@ -3679,7 +3680,7 @@
               "storesInventory": null,
               "threatFrequency": {
                 "tampering": 0,
-                "repudiation": 4,
+                "repudiation": 5,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
@@ -3916,7 +3917,7 @@
             },
             "id": "b1ef5a1b-e975-4fd3-8ba0-079c4b33533f",
             "data": {
-              "type": "tm.Flow",
+              "type": "tm.Store",
               "name": "Routing-\nInformation-DB",
               "description": "",
               "outOfScope": false,
@@ -4186,8 +4187,8 @@
                 "text": "SIEM\nSystem"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -4284,7 +4285,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -4293,7 +4294,7 @@
                 {
                   "id": "0187abae-16b6-481d-836c-dcade41974fb",
                   "title": "Hijacking a privileged process",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Elevation of privilege",
                   "description": "ID: CAPEC-234\nTactic: Privilege Escalation (T1055)\nAngriffsvektor: Network\nBeschreibung: Angreifer erhält Kontrolle über das SIEM-System und nutzt die erhöten Privilegien zum Ausführung bösartiger Anwendungen\n\nD9, R2, E2, A0\nSumme 13",
@@ -4310,7 +4311,7 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 4
+                "elevationOfPrivilege": 5
               }
             }
           },
@@ -4328,8 +4329,8 @@
                 "text": "Management"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -4426,13 +4427,13 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": [
                 {
                   "id": "70864d1a-b68f-4a29-a8b0-a7d3b0e0fbc3",
                   "title": "Signature Spoofing",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Angreifer spooft die Signatur des SIEM-System und sendet eine Fake-Report-Mail mit bösartigem Anhang o.Ä. (CAPEC-473)\nTactic: Initial Access (T1566)\nAngriffsvektor: Adjacent\n\nD9, R5, E2, A8\nSumme 24",
@@ -4444,7 +4445,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "repudiation": 0
               }
             }
