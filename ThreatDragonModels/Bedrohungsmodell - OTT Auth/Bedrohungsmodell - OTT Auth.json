@@ -1692,8 +1692,8 @@
                 "text": "User"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1790,9 +1790,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [],
-              "hasOpenThreats": false,
-              "providesAuthentication": false
+              "threats": [
+                {
+                  "id": "2962aee0-a5b0-4af9-8310-5bb090225c5a",
+                  "title": "Phishing",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "ID: CAPEC-98\nTactic: Initial Access\nBeschreibung: Der Angreifer versucht über Phishing-Link Login-Daten beim Nutzer abzugreifen.\nAngriffsvektor: Adjacent (T1566)",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 103,
+                  "score": ""
+                }
+              ],
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threatFrequency": {
+                "spoofing": 3,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -1809,8 +1827,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1909,21 +1927,42 @@
               "reasonOutOfScope": "",
               "threats": [
                 {
-                  "id": "49eaf072-ffef-429a-b519-fcaa6200de4b",
-                  "title": "DDoS",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "Ein DDoS Angriff kann den Login-Dienst überlasten und somit für Anwender unerreichbar machen. \n\nCAPEC-125: Flooding: An adversary consumes the resources of a target by rapidly engaging in a large number of interactions with the target.\n\nATT&CK: TA0038 - Network Effects: The adversary is trying to intercept or manipulate network traffic to or from a device.\n\nD: 8 / R: 10 / E: 8 / A: 10 / DREA: 36",
-                  "mitigation": "Firewall, Load-Balancer oder CDN einsetzen, um direkten Datenverkehr auf Login-Server zu begrenzen.\n\nDEFEND: D3-ITF - Inbound Traffic Filtering\nASVS: CWE 770 (8.1.4): Verify the application can detect and alert on abnormal numbers of requests, such as by IP, user, total per hour or day, or whatever makes sense for the application.\n\nD: 4 / R: 10 / E: 4 / A: 10 / Neuer DREA: 28",
+                  "id": "c3ac57c5-9e68-47ce-a1e5-69a6b69899fe",
+                  "title": "SQL Injection bei Registrierung",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "ID: CAPEC-66\nTactic: Initial Acces (T1190)\nAngriffsvektor: Network\nBeschreibung: Angreifer nutzt Inputfelder aus, um SQL Anfragen an die Datenbank zustellen und die Daten zu manipulieren",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 101,
-                  "score": "28"
+                  "number": 104,
+                  "score": ""
+                },
+                {
+                  "id": "310456e3-4242-4855-a6de-baed3b40c04c",
+                  "title": "Flooding",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "ID: CAPEC-125\nTactic: Inhibit Response Function (T0814)\nAngriffsvektor: Network\nBeschreibung: Angreifer überlastet das Loginsystem durch viele Loginanfragen",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 107,
+                  "score": ""
                 }
               ],
-              "hasOpenThreats": false,
-              "isWebApplication": null
+              "hasOpenThreats": true,
+              "isWebApplication": null,
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -2534,7 +2573,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -2555,12 +2595,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "111142fd-56fc-493a-a8d0-17489d494105",
+                  "title": "Man in the Middle ",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "ID: CAPEC-94\nTactic: Credential Access (T1557)\nAngriffsvektor: Local\nBeschreibung: Angreifer fängt die übertragenen Telefonnummern der Nutzer ab",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 106,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               {
@@ -2579,7 +2638,12 @@
             "target": {
               "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 810,
+                "y": 190
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -3499,11 +3563,13 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -3603,8 +3669,29 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "d2bb202d-fa2a-4358-b8d4-02511588968d",
+                  "title": "Log-Daten fluten",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "ID: CAPEC-130\nTactic: Defense Evasion (T1562)\nAngriffsvektor: Network\nBeschreibung: Angreifer flutet die Log-Daten, um einen Angriff zu vertuschen",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 105,
+                  "score": ""
+                }
+              ],
+              "storesInventory": null,
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -4329,6 +4416,13 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           }
         ],
@@ -4341,7 +4435,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 11,
-    "threatTop": 102
+    "threatTop": 108
   },
   "version": "2.5.0"
 }
